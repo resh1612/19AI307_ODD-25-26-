@@ -1,63 +1,88 @@
-# Ex.No:2(B) METHODS
+# Ex.No:2(A) CLASS AND OBJECT
 
 ## QUESTION:
-Write a method int cube(int x) that calls a method int square(int x) internally to calculate the cube as x * square(x).
+Define a class Car with brand (String), color (String), and year (int). Create 2 different objects of Car  Assign values to attributes. Print the details of both cars.
 
 ## AIM:
-To write a Java program that defines a method cube(int x) which internally calls another method square(int x) to compute the cube of a number using the formula: cube = x * square(x).
+To define a class Car with attributes brand, color, and year; create two objects of the class; assign values to their attributes; and print the details of both cars.
 
 ## ALGORITHM :
-1.	Start the program.
-2.	Import the necessary package 'java.util'
-3.	Create a method square(int x) that returns the value of x * x.
-4. Create another method cube(int x) that:</BR>
-     - Calls square(x)</BR>
-     - Multiplies the result by x</BR>
-     - Returns the final cube value.</BR>
-5. In the main method:</BR>
-     - Read or assign a value for x</BR>
-     - Call the cube(x) method</BR>
-6. Display the cube.
-7. End the program.
+1. Define a class Car with three data members:
 
+     String brand
+     String color
+     int year
+ and a method printDetails() to display these values.
 
+2. In the main() method, create a Scanner object to read user inputs.
+
+3. Create the first object car1 and read its brand, color, and year from the user.
+
+4. Create the second object car2 and read its brand, color, and year.
+
+5. Call printDetails() for car1 to display its information.
+
+6. Call printDetails() for car2 to display its information.
+
+7.Close the scanner and end the program.
 
 
 ## PROGRAM:
  ```
 /*
-Program to implement a Methods using Java
+Program to implement a Class and Objects using Java
 Developed by: Nikshitha G
 RegisterNumber: 212223110031
-
 */
 ```
 
 ## SOURCE CODE:
 ```
-import java.util.*;
-public class Main
-{
-    static int square(int x)
-    {
-        return x*x;
+import java.util.Scanner;
+
+class Car {
+    String brand;
+    String color;
+    int year;
+
+    void printDetails() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Color: " + color);
+        System.out.println("Year: " + year);
     }
-    static int cube(int x)
-    {
-        return x*square(x);
-    }
-    public static void main(String[] args)
-    {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        System.out.println(cube(n));
+}
+
+class prog {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        Car car1 = new Car();
+        car1.brand = scanner.nextLine();
+        car1.color = scanner.nextLine();
+        car1.year = scanner.nextInt();
+        scanner.nextLine();
+
+        
+        Car car2 = new Car();
+        car2.brand = scanner.nextLine();
+        car2.color = scanner.nextLine();
+        car2.year = scanner.nextInt();
+
+        car1.printDetails();
+        car2.printDetails();
+
+        scanner.close();
     }
 }
 ```
 
 
 ## OUTPUT:
-<img width="282" height="90" alt="image" src="https://github.com/user-attachments/assets/0c98b161-ebf9-4ee6-92cc-084d1e4c1829" />
+<img width="597" height="685" alt="image" src="https://github.com/user-attachments/assets/05ebe553-f279-4f17-b125-675b4afd47bd" />
+
 
 ## RESULT:
-The program successfully calculates the cube of a given number by calling the square() method from within the cube() method, demonstrating method calling and reuse in Java.
+Therefore,the program successfully creates two Car objects and assigns values to their attributes.
+
+
